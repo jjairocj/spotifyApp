@@ -41,8 +41,14 @@
         </div>
     </div>
 </div>
-<ul>
-    <li *ngFor="let pais of paises">
-        {{ pais.name }} - {{ pais.population || number }}
-    </li>
-</ul>
+<div class="card-columns">
+    <div *ngFor="let release of newReleases" class="card" style="color: black">
+        <img class="card-img-top" [src]="release.images[0].url" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{ release.name }}</h5>
+            <p class="card-text">
+                <span *ngFor="let artist of release.artists" class="badge badge-dark">{{ artist.name }}</span>
+            </p>
+        </div>
+    </div>
+</div>
